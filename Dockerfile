@@ -1,4 +1,4 @@
-FROM ruby:3.1.2
+FROM ruby:3.0.5
 
 # Set our working directory inside the image
 WORKDIR /wiki

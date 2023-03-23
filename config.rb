@@ -301,6 +301,8 @@ omnigollum_options = {
   :authorized_users => ENV['OMNIGOLLUM_AUTHORIZED_USERS'].split(","),
 }
 
+OmniAuth.config.allowed_request_methods = [:post, :get]
+
 ## :omnigollum options *must* be set before the Omnigollum extension is registered
 Precious::App.set(:wiki_options, wiki_options)
 Precious::App.set(:omnigollum, omnigollum_options)
