@@ -8,7 +8,7 @@ RUN apt-get update -qq && apt-get -y install cmake
 
 # Copy wiki data
 # COPY . .
-RUN git clone -b main https://github.com/goooooouwa/wiki-knowledge.git .
+RUN git clone -b main https://github.com/goooooouwa/knowledge-base.git .
 
 # Adding gems
 # RUN gem install gollum
