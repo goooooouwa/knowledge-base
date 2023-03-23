@@ -17,4 +17,4 @@ RUN git clone -b main https://github.com/goooooouwa/wiki-knowledge.git .
 EXPOSE 9292
 
 # ENTRYPOINT ["gollum", "/wiki", "--config", "/wiki/config.rb"]
-ENTRYPOINT ["bundle", "exec", "puma", "-C", "./config.ru"]
+ENTRYPOINT ["bundle", "exec", "puma"]
