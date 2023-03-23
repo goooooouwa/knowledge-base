@@ -6,4 +6,4 @@ services:
       context: .
     restart: always
     ports:
-      - "8067:4567/tcp"
+      - "8067:9292/tcp"
