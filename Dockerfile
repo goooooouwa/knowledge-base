@@ -6,13 +6,13 @@ WORKDIR /wiki
 # Install dependencies
 RUN apt-get update -qq && apt-get -y install cmake
 
-# Adding gems
-# RUN gem install gollum
-RUN bundle install
-
 # Copy wiki data
 # COPY . .
 RUN git clone -b main https://github.com/goooooouwa/wiki-knowledge.git .
+
+# Adding gems
+# RUN gem install gollum
+RUN bundle install
 
 EXPOSE 4567
 # EXPOSE 9292
