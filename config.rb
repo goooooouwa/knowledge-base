@@ -1,11 +1,9 @@
 require 'gollum/app'
 
-wiki = Gollum::Wiki.new(".")
-
 # Per https://github.com/gollum/gollum-lib/issues/12
 Gollum::Hook.register(:post_commit, :hook_id) do |committer, sha1|
-  wiki.repo.git.pull("origin", "main")
-  wiki.repo.git.push("origin", "main")
+  committer.wiki.repo.git.pull('origin', committer.wiki.ref)
+  committer.wiki.repo.git.push('origin', committer.wiki.ref)
 end
 
 # Launch Gollum using a specific git adapter. See https://github.com/gollum/gollum/wiki/Git-adapters

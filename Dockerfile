@@ -11,7 +11,7 @@ RUN gem install gollum
 
 # Copy wiki data
 # COPY . .
-RUN git clone -b main https://git@github.com/goooooouwa/wiki-knowledge.git .
+RUN git clone -b main https://github.com/goooooouwa/wiki-knowledge.git .
 
 EXPOSE 4567
 
