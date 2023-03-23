@@ -8,3 +8,4 @@ Apps:
 * Notes - private note taking
 * YesPlayMusic - online music player
 * Onenav - website navigation / bookmarks
+* GoPlan
