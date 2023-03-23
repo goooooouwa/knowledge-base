@@ -4,10 +4,6 @@ services:
   knowledge-base:
     build:
       context: .
-    environment:
-      - GITHUB_KEY=${GITHUB_KEY}
-      - GITHUB_SECRET=${GITHUB_SECRET}
-      - OMNIGOLLUM_AUTHORIZED_USERS=${OMNIGOLLUM_AUTHORIZED_USERS}
     restart: always
     networks:
       - reverse-proxy

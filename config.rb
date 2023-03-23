@@ -1,14 +1,3 @@
-require 'gollum/app'
-require 'omnigollum'
-require 'omniauth/strategies/github'
-require 'dotenv/load'
-
-# Per https://github.com/gollum/gollum-lib/issues/12
-Gollum::Hook.register(:post_commit, :hook_id) do |committer, sha1|
-  `git pull`
-  `git push`
-end
-
 # Launch Gollum using a specific git adapter. See https://github.com/gollum/gollum/wiki/Git-adapters
 # Default: rugged
 #
@@ -158,7 +147,7 @@ wiki_options = {
   #
   # Equivalent to --no-edit
 
-  #allow_editing: false,
+  allow_editing: false,
 
   #-----------------------------------------------------------------------------
   # Specify the subdirectory for all pages. If set, Gollum will only serve pages
@@ -281,29 +270,4 @@ wiki_options = {
 # Change default markup
 #Precious::App.set(:default_markup, :asciidoc)
 
-omnigollum_options = {
-  # OmniAuth::Builder block is passed as a proc
-  :providers => Proc.new do
-    # Found https://github.com/settings/applications/
-    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
-  end,
-  :dummy_auth => false,
-
-  # If you want to make pages private:
-  #:protected_routes => ['/private*'],
-
-  # Specify committer name as just the user name
-  :author_format => Proc.new { |user| user.name },
-  # Specify committer e-mail as just the user e-mail
-  :author_email => Proc.new { |user| user.email },
-
-  # Authorized users
-  :authorized_users => ENV['OMNIGOLLUM_AUTHORIZED_USERS'].split(","),
-}
-
-OmniAuth.config.allowed_request_methods = [:post, :get]
-
-## :omnigollum options *must* be set before the Omnigollum extension is registered
 Precious::App.set(:wiki_options, wiki_options)
-Precious::App.set(:omnigollum, omnigollum_options)
-Precious::App.register Omnigollum::Sinatra

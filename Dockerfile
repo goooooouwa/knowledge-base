@@ -11,8 +11,8 @@ RUN apt-get update -qq && apt-get -y install cmake
 RUN git clone -b main https://github.com/goooooouwa/knowledge-base.git .
 
 # Adding gems
-# RUN gem install gollum
-RUN bundle install
+RUN gem install gollum
+# RUN bundle install
 
 EXPOSE 4567
 # EXPOSE 9292
