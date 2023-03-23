@@ -9,5 +9,12 @@ services:
       - GITHUB_SECRET=${GITHUB_SECRET}
       - OMNIGOLLUM_AUTHORIZED_USERS=${OMNIGOLLUM_AUTHORIZED_USERS}
     restart: always
-    ports:
-      - "8167:4567/tcp"
+    networks:
+      - reverse-proxy
+    expose:
+      - 4567
+
+networks:
+  reverse-proxy:
+    name: nginx_default
+    external: true
