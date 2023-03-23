@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'gollum/auth' # Don't forget to load the gem!
 require 'gollum/app'
+require 'dotenv/load'
 
 #### ------ Gollum::Auth configurations Begin ------ ###
 # Define list of authorized users.
@@ -11,17 +12,26 @@ require 'gollum/app'
 # SHA-256 hash of a password.
 #
 # Example:
-users = YAML.load %q{
----
-- username: rick
-  password: asdf754&1129-@lUZw
-  name: Rick Sanchez
-  email: rick@example.com
-- username: morty
-  password_digest: 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
-  name: Morty Smith
-  email: morty@example.com
-}
+# users = YAML.load %q{
+# ---
+# - username: rick
+#   password: asdf754&1129-@lUZw
+#   name: Rick Sanchez
+#   email: rick@example.com
+# - username: morty
+#   password_digest: 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+#   name: Morty Smith
+#   email: morty@example.com
+# }
+
+users = [
+  {
+    "username" => ENV['USERNAME'],
+    "password" =>  ENV['PASSWORD'],
+    "name" => ENV['NAME'],
+    "email" => ENV['EMAIL']
+  }
+]
 
 # Allow unauthenticated users to read the wiki (disabled by default).
 options = { allow_unauthenticated_readonly: true }

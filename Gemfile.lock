@@ -12,6 +12,7 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    dotenv (2.8.1)
     execjs (2.8.1)
     ffi (1.15.5)
     gemojione (4.3.3)
@@ -131,6 +132,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  dotenv
   gollum
   gollum-auth
   puma
