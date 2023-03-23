@@ -14,7 +14,8 @@ RUN bundle install
 # COPY . .
 RUN git clone -b main https://github.com/goooooouwa/wiki-knowledge.git .
 
-EXPOSE 9292
+EXPOSE 4567
+# EXPOSE 9292
 
-# ENTRYPOINT ["gollum", "/wiki", "--config", "/wiki/config.rb"]
-ENTRYPOINT ["bundle", "exec", "puma"]
+ENTRYPOINT ["gollum", "/wiki", "--config", "/wiki/config.rb"]
+# ENTRYPOINT ["bundle", "exec", "puma"]
