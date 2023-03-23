@@ -4,6 +4,7 @@ services:
   knowledge-base:
     build:
       context: .
+    container_name: knowledge-base
     restart: always
     networks:
       - reverse-proxy
