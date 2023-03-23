@@ -5,10 +5,9 @@ services:
     build:
       context: .
     environment:
-      - USER1_USERNAME=${USER1_USERNAME}
-      - USER1_PASSWORD=${USER1_PASSWORD}
-      - USER1_NAME=${USER1_NAME}
-      - USER1_EMAIL=${USER1_EMAIL}
+      - GITHUB_KEY=${GITHUB_KEY}
+      - GITHUB_SECRET=${GITHUB_SECRET}
+      - OMNIGOLLUM_AUTHORIZED_USERS=${OMNIGOLLUM_AUTHORIZED_USERS}
     restart: always
     ports:
       - "8067:9292/tcp"

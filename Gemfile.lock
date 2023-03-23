@@ -1,15 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.11.3)
-      activesupport (= 4.2.11.3)
-      builder (~> 3.1)
-    activesupport (4.2.11.3)
-      i18n (~> 0.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
-      tzinfo (~> 1.1)
-    builder (3.2.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     dotenv (2.8.1)
@@ -35,9 +26,6 @@ GEM
       uglifier (~> 4.2)
       useragent (~> 0.16.2)
       webrick (~> 1.7)
-    gollum-auth (0.7.1)
-      activemodel (~> 4.2)
-      rack
     gollum-lib (5.2.4)
       gemojione (~> 4.1)
       github-markup (~> 4.0)
@@ -50,8 +38,7 @@ GEM
     gollum-rugged_adapter (2.1.0)
       mime-types (~> 3.4)
       rugged (~> 1.5)
-    i18n (0.9.5)
-      concurrent-ruby (~> 1.0)
+    hashie (5.0.0)
     json (2.6.3)
     kramdown (2.4.0)
       rexml
@@ -63,20 +50,24 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0218.1)
-    minitest (5.18.0)
     multi_json (1.15.0)
     mustache (0.99.8)
     mustache-sinatra (1.0.1)
       mustache (<= 0.99.8)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.8)
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     octicons (12.1.0)
       nokogiri (>= 1.6.3.1)
-    puma (6.1.1)
-      nio4r (~> 2.0)
+    omniauth (2.1.1)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omnigollum (0.1.6)
+      gollum
+      mustache (>= 0.99.5)
+      omniauth
     racc (1.6.2)
     rack (2.2.6.4)
     rack-protection (2.2.4)
@@ -114,12 +105,9 @@ GEM
     therubyrhino (2.1.2)
       therubyrhino_jar (>= 1.7.4, < 1.7.9)
     therubyrhino_jar (1.7.8)
-    thread_safe (0.3.6)
     tilt (2.1.0)
     twitter-text (1.14.7)
       unf (~> 0.1.0)
-    tzinfo (1.2.11)
-      thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
@@ -134,8 +122,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   gollum
-  gollum-auth
-  puma
+  omnigollum
 
 RUBY VERSION
    ruby 3.1.2p20
