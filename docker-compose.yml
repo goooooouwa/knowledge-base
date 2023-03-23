@@ -10,4 +10,4 @@ services:
       - OMNIGOLLUM_AUTHORIZED_USERS=${OMNIGOLLUM_AUTHORIZED_USERS}
     restart: always
     ports:
-      - "8067:4567/tcp"
+      - "8167:4567/tcp"
