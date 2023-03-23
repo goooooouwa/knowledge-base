@@ -1,5 +1,41 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'gollum/auth' # Don't forget to load the gem!
 require 'gollum/app'
 
+#### ------ Gollum::Auth configurations Begin ------ ###
+# Define list of authorized users.
+# Each user must have a username, password, name and email.
+#
+# Instead of a password you can also define a password_digest, which is the
+# SHA-256 hash of a password.
+#
+# Example:
+users = YAML.load %q{
+---
+- username: rick
+  password: asdf754&1129-@lUZw
+  name: Rick Sanchez
+  email: rick@example.com
+- username: morty
+  password_digest: 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+  name: Morty Smith
+  email: morty@example.com
+}
+
+# Allow unauthenticated users to read the wiki (disabled by default).
+options = { allow_unauthenticated_readonly: true }
+
+# Allow only authenticated users to change the wiki.
+# (NOTE: This must be loaded *before* Precious::App!)
+use Gollum::Auth, users, options
+
+#### ------ Gollum::Auth configurations End ------ ###
+
+
+#### ------ Gollum configurations Begin ------ ###
+
+# Git push after every edit
 # Per https://github.com/gollum/gollum-lib/issues/12
 Gollum::Hook.register(:post_commit, :hook_id) do |committer, sha1|
   `git pull`
@@ -278,4 +314,8 @@ wiki_options = {
 # Change default markup
 #Precious::App.set(:default_markup, :asciidoc)
 
+gollum_path = File.expand_path(File.dirname(__FILE__)) # CHANGE THIS TO POINT TO YOUR OWN WIKI REPO
+Precious::App.set(:gollum_path, gollum_path)
+Precious::App.set(:default_markup, :markdown) # set your favorite markup language
 Precious::App.set(:wiki_options, wiki_options)
+run Precious::App
