@@ -4,6 +4,11 @@ services:
   gollum:
     build:
       context: .
+    environment:
+      - USER1_USERNAME=${USER1_USERNAME}
+      - USER1_PASSWORD=${USER1_PASSWORD}
+      - USER1_NAME=${USER1_NAME}
+      - USER1_EMAIL=${USER1_EMAIL}
     restart: always
     ports:
       - "8067:9292/tcp"
