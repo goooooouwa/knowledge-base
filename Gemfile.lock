@@ -129,13 +129,16 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
-  x86_64-darwin-21
+  x86_64-darwin-22
 
 DEPENDENCIES
   dotenv
   gollum
   gollum-auth
   puma
+
+RUBY VERSION
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.13
