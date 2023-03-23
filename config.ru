@@ -26,10 +26,10 @@ require 'dotenv/load'
 
 users = [
   {
-    "username" => ENV['USERNAME'],
-    "password" =>  ENV['PASSWORD'],
-    "name" => ENV['NAME'],
-    "email" => ENV['EMAIL']
+    "username" => ENV['USER1_USERNAME'],
+    "password" =>  ENV['USER1_PASSWORD'],
+    "name" => ENV['USER1_NAME'],
+    "email" => ENV['USER1_EMAIL']
   }
 ]
 
