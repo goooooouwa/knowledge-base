@@ -4,8 +4,6 @@ services:
   knowledge-base:
     build:
       context: .
-      args:
-        - PERSONAL_ACCESS_TOKEN=${PERSONAL_ACCESS_TOKEN}
     container_name: knowledge-base
     restart: always
     networks:
