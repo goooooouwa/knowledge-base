@@ -1,3 +1,3 @@
 Test
 
-<<Navigation()>>
+<<Navigation("TOC", "BYO")>>
