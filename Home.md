@@ -2,9 +2,6 @@ Welcome home!
 
 [[_TOC_|levels = 3]]
 
-<<GlobalTOC()>>
-
-
 # 1212121
 
 ## 2323232
