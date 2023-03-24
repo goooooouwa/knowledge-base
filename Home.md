@@ -2,11 +2,6 @@ Welcome home!
 
 [[_TOC_|levels = 3]]
 
-<<Navigation()>>
-
-<<AllPages()>>
-
-
 # Heading 1
 
 body text
