@@ -1,6 +1,6 @@
 Welcome home!
 
-[[_TOC_|levels = 2]]
+[[_TOC_|levels = 3]]
 
 <<GlobalTOC()>>
 
