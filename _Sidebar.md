@@ -1,1 +1,1 @@
-<<Navigation("BYO", "BYO", false)>>
+<<Navigation()>>
