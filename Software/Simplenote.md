@@ -1,8 +1,10 @@
 Simplenote
 
+https://simplenote.com/
+
 ## Pros
 
-* 全平台同步（Mac, iOS, Windows, Linux, Android）
+* 全平台同步（Web, Mac, iOS, Windows, Linux, Android）
 * 支持Markdown
 * 简单，no bullshit
 
