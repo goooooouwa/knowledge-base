@@ -4,5 +4,6 @@ Welcome home!
 <<Navigation("Gadgets","Gadgets")>>
 <<Navigation("GoPlan","GoPlan")>>
 <<Navigation("How To","How-To")>>
-<<Navigation("Websites","Websites")>>
+<<Navigation("Racing","Racing")>>
 <<Navigation("Software","Software")>>
+<<Navigation("Websites","Websites")>>

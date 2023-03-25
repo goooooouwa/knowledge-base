@@ -2,5 +2,6 @@
 <<Navigation("Gadgets","Gadgets")>>
 <<Navigation("GoPlan","GoPlan")>>
 <<Navigation("How To","How-To")>>
+<<Navigation("Racing","Racing")>>
 <<Navigation("Software","Software")>>
 <<Navigation("Websites","Websites")>>
