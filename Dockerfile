@@ -15,7 +15,7 @@ RUN gem install gollum
 # Invalidate git clone if new commits in remote repo
 # ref: https://stackoverflow.com/questions/36996046/how-to-prevent-dockerfile-caching-git-clone
 ADD https://api.github.com/repos/goooooouwa/knowledge-base/git/refs/heads/main version.json
-RUN git clone -b main https://github.com/goooooouwa/knowledge-base.git .
+RUN git clone -b main https://github.com/goooooouwa/knowledge-base.git
 
 EXPOSE 4567
 # EXPOSE 9292
