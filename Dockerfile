@@ -20,5 +20,5 @@ RUN git clone -b main https://github.com/goooooouwa/knowledge-base.git
 EXPOSE 4567
 # EXPOSE 9292
 
-ENTRYPOINT ["gollum", "/wiki", "--config", "/wiki/config.rb"]
+ENTRYPOINT ["gollum", "/wiki/knowledge-base", "--config", "/wiki/config.rb"]
 # ENTRYPOINT ["bundle", "exec", "puma"]
