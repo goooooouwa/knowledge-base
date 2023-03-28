@@ -1,4 +1,5 @@
 <<Navigation("Build Your Own","BYO")>>
+<<Navigation("Design","Design")>>
 <<Navigation("Drawing","Drawing")>>
 <<Navigation("Gadgets","Gadgets")>>
 <<Navigation("GoPlan","GoPlan")>>
