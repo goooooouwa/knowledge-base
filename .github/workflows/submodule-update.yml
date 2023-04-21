@@ -19,9 +19,9 @@ jobs:
       ##########################
       - name: Checkout Code
         uses: actions/checkout@v2
-          with:
-            repository: goooooouwa/goooooouwa.github.io
-            persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        with:
+          repository: goooooouwa/goooooouwa.github.io
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
 
       ####################################
       # Run the action against code base #
