@@ -31,10 +31,12 @@ jobs:
       ####################################
       - name: Commit files
         run: |
-          cd _docs
           git config --local user.name "Shunfa Xu"
           git config --local user.email "1495607+goooooouwa@users.noreply.github.com"
-          git submodule update --remote docs
+          cd '_docs'
+          git submodule init
+          git submodule update
+          cd ..
           git add .
           git commit -m "jekyll build with Knowledge Base update at $(date)"
       - name: Push changes
