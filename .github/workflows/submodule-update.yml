@@ -18,7 +18,7 @@ jobs:
       # Checkout the parent code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           repository: goooooouwa/goooooouwa.github.io
           path: .
@@ -31,7 +31,6 @@ jobs:
       # Run the action against code base #
       ####################################
       - name: Commit files
-        uses: actions/checkout@v3
         run: |
           git config --local user.name "Shunfa Xu"
           git config --local user.email "1495607+goooooouwa@users.noreply.github.com"
