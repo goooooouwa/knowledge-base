@@ -1,0 +1,45 @@
+name: Submodule Updates
+
+#############################
+# Start the job on all push #
+#############################
+on: [push]
+
+###############
+# Set the Job #
+###############
+jobs:
+  build:
+    name: Submodule update
+    runs-on: ubuntu-latest
+
+    steps:
+      ##########################
+      # Checkout the parent code base #
+      ##########################
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          repository: goooooouwa/goooooouwa.github.io
+          path: .
+          ref: master
+          submodules: true
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+
+      ####################################
+      # Run the action against code base #
+      ####################################
+      - name: Commit files
+        run: |
+          git config --local user.name "Shunfa Xu"
+          git config --local user.email "1495607+goooooouwa@users.noreply.github.com"
+          git submodule update --remote _docs
+          git add .
+          git commit -m "jekyll build with Knowledge Base update at $(date)"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          repository: goooooouwa/goooooouwa.github.io
+          branch: master
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
