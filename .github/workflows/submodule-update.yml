@@ -22,6 +22,7 @@ jobs:
         with:
           repository: goooooouwa/goooooouwa.github.io
           path: .
+          ref: master
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
 
