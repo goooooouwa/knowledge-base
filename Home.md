@@ -1,5 +1,6 @@
 Welcome home!
 
+<<Navigation("A","A")>>
 <<Navigation("Build Your Own","BYO")>>
 <<Navigation("Business","Business")>>
 <<Navigation("Coding","Coding")>>
