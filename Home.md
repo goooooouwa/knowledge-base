@@ -1,5 +1,7 @@
 Welcome home!
 
+<<GlobalTOC()>>
+
 <<Navigation("A","A")>>
 <<Navigation("Build Your Own","BYO")>>
 <<Navigation("Business","Business")>>
